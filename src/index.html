@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font-family: Rubik Glitch, Didot, Montserrat,Ubuntu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Montserrat&family=Rubik+Glitch&family=Ubuntu&display=swap"
+        rel="stylesheet">
+    <!-- fontawesome cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <title>Peter Pan</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="web-header" class="header">
+        <nav class="nav container">
+            <a id="sec-main" href="#mainpage"><i class="fa-solid fa-p brand"></i></a>
+            <ul class="nav-menu">
+                <li class="nav-list"><a id="sec-1" href="#time">Pan's Time</a></li>
+                <li class="nav-list"><a id="sec-2" href="#night">Pairs Night</a></li>
+                <li class="nav-list"><a id="sec-3" href="#partnerships">Partnerships</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- main page -->
+    <section id="mainpage">
+        <div class="mainpage-content">
+            <h1>Free to<br>Freestyle</h1>
+            <p>"The game is over. We are the <span><em>Champion.</em></span>
+                <br>Anyone can be dissatisfied except us."
+            </p>
+        </div>
+    </section>
+    <!-- Pan's Time -->
+    <section id="time" class="section-1">
+        <h2>Pan's Time</h2>
+        <div class="time-grid">
+            <!-- 48s group -->
+            <div class="big-col big48">48</div>
+            <div class="race-col" data-modal="modal-2021">2021 Xi'an<br><strong>48.59s</strong></div>
+
+            <!-- 47s group -->
+            <div class="big-col big47">47</div>
+            <div class="race-col" data-modal="modal-2023-fukuoka">2023 Fukuoka<br><strong>47.43s</strong></div>
+
+            <!-- 46s group -->
+            <div class="big-col big46">46</div>
+            <div class="race-col" data-modal="modal-2023-hangzhou">2023 Hangzhou<br><strong>46.97s</strong></div>
+            <div class="race-col" data-modal="modal-2024-doha">2024 Doha<br><strong>46.80s</strong></div>
+            <div class="race-col" data-modal="modal-2024-paris">2024 Paris<br><strong>46.40s</strong></div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal-2021" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>2021 Chinese National Games</h2>
+            <p>Pan Zhanle swam 48.59s at the 2021 Xi'an National Games.</p>
+        </div>
+    </div>
+
+    <div id="modal-2023-fukuoka" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>2023 World Championships (Fukuoka)</h2>
+            <p>Pan Zhanle clocked 47.43s at the 2023 Fukuoka World Championships.</p>
+        </div>
+    </div>
+
+    <div id="modal-2023-hangzhou" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>2023 Asian Games (Hangzhou)</h2>
+            <p>Pan Zhanle set 46.97s at the 2023 Hangzhou Asian Games and broke the asian record.</p>
+        </div>
+    </div>
+
+    <div id="modal-2024-doha" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>2024 World Championships (Doha)</h2>
+            <p>Pan Zhanle broke world record with 46.80s at the 2024 Doha World Championships and this was his first
+                Championships gold medal.</p>
+        </div>
+    </div>
+
+    <div id="modal-2024-paris" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>2024 Paris Olympics</h2>
+            <p>Pan Zhanle broke world record with 46.40s at the 2024 Paris Olympics and became the third male Olympics
+                gold medalist in China.</p>
+        </div>
+    </div>
+
+
+    <!-- Paris Night -->
+    <section id="night" class="section-2">
+        <h2 class="carousel-title">Paris Night</h2>
+        <div class="carousel">
+            <div class="carousel-track">
+                <!-- Slide 1 -->
+                <div class="carousel-slide">
+                    <img src="assets/IMG_4221.jpg" alt="Paris Pool Night View">
+                </div>
+
+                <!-- Slide 2: video -->
+                <div class="carousel-slide">
+                    <video src="assets/parisnight.mov" controls></video>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-slide">
+                    <img src="assets/IMG_4222.jpg" alt="Celebration">
+                </div>
+            </div>
+
+            <!-- button -->
+            <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn next">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Partnerships -->
+    <section id="partnerships" class="section-3">
+        <h2>Partnerships</h2>
+        <div class="overlay">
+            <div class="brand-logos">
+                <img src="assets/bv.png" alt="Bottega Veneta Logo" />
+                <img src="assets/adidas.png" alt="Adidas Logo" />
+                <img src="assets/shangrila.png" alt="Shangri-La Logo" />
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer id="web-footer" class="footer">
+        <div class="footer-container">
+            <div class="social-icons">
+                <a href="https://weibo.com/u/7247957528" target="_blank" aria-label="Weibo">
+                    <i class="fa-brands fa-weibo"></i>
+                </a>
+                <a href="https://www.instagram.com/panzhanle?igsh=MWtjYzJ5OHdlanQ5bA==" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://v.douyin.com/5Zt-QLYTPrM/ 8@5.com :3pm" target="_blank" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+            <p>© 2025 Zoe Zhang. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

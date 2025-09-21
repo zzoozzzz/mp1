@@ -1,0 +1,515 @@
+:root {
+  --nav-h: 84px;
+  --brand-size: 42px;
+}
+
+$primary-color: #03739f;
+$secondary-color: #58A0C8;
+$highlight-color: #74c7f4;
+$white: #fff;
+
+$font-title: "Didot", sans-serif;
+$font-body: "Montserrat", sans-serif;
+$font-glitch: "Rubik Glitch", sans-serif;
+
+$nav-h: 84px;
+$nav-h-shrink: 60px;
+$brand-size: 42px;
+
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin section-title($color, $align: left) {
+  width: 100%;
+  font-family: $font-title;
+  font-size: 9rem;
+  color: $color;
+  text-align: $align;
+  margin: 0;
+  background: $white;
+  padding-top: $nav-h;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: $font-body;
+}
+
+section {
+  min-height: 100vh;
+  padding-top: 2rem;  
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: $primary-color;
+  transition: all 0.3s ease;
+
+  &.shrink {
+    --nav-h: #{$nav-h-shrink};
+    padding: center;
+    .brand {
+      width: $brand-size * 0.8;  
+      height: $brand-size * 0.8;
+      font-size: 24px;
+    }
+   .nav-menu a {
+      font-size: 1rem;
+      padding: 0.6rem 0.8rem;
+      line-height: 1.2rem;
+    }
+}
+
+  .nav {
+    @include flex-center;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--nav-h);
+    width: 100%;
+  }
+
+  .brand {
+    @include flex-center;
+    width: $brand-size;
+    height: $brand-size;
+    background-color: $white;
+    border-radius: 50%;
+    color: $primary-color;
+    font-weight: 400;
+    font-size: 30px;
+    margin: 0 0 0 20px;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .nav-menu {
+    display: inline-flex;
+    list-style: none;
+    gap: 1.2rem;
+    margin: 0 20px;
+
+    a {
+      text-decoration: none;
+      color: $white;
+      font-weight: 400;
+      padding: 0.8rem 1rem;
+      font-size: 1.2rem;
+      transition: font-size 0.3s ease, color 0.3s ease;
+
+      &.active {
+        color: $highlight-color;
+        font-weight: 700;
+        border-bottom: 2px solid $secondary-color;
+      }
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+#mainpage {
+  position: relative;
+  min-height: 100vh;
+  background: url("../assets/bg-img.jpg") no-repeat center/cover;
+  @include flex-center; 
+  justify-content: flex-end;
+  box-sizing: border-box;
+  margin-top: 0;
+  padding: 0;
+
+  .mainpage-content {
+    text-align: right;
+    color: $white;
+    max-width: 80%;
+
+    h1 {
+      font-family: $font-title;
+      font-size: 10rem;
+      line-height: 1.5;
+    }
+
+    p {
+      font-family: $font-body;
+      font-size: 2rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+.section-1 {
+  position: relative;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.section-1 h2 {
+  width: 100%;
+  font-family: "Didot", sans-serif;
+  font-size: 9rem;
+  color: #03739f;
+  text-align: left;
+  margin: 0;
+  background: #fff;
+}
+
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  min-height: 70vh;
+  align-items: stretch;
+}
+
+.big-col {
+  background: #a8d9e4;
+  color: $white;
+  font-family: $font-glitch;
+  font-size: 2.5rem;
+  @include flex-center;
+  padding: 1rem;
+}
+
+.big48 {
+  background: linear-gradient(55deg, $primary-color, #8fd3f4);
+}
+
+.big47 {
+  background: linear-gradient(55deg, #8fd3f4, #d9f0fa);
+}
+
+.big46 {
+  background: linear-gradient(55deg, #d9f0fa, #e3f7fd);
+}
+
+.race-col {
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 100%;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-family: $font-body;
+  font-size: 2em;
+  word-break: keep-all;
+
+  &:hover {
+    background: $white;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  &.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background: linear-gradient(55deg, $white, #8fd3f4);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 600px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+    font-family: $font-title;
+    font-size: 2rem;
+  }
+
+  .close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+
+    &:hover {
+      color: #e74c3c;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-2 {
+  h2 {
+    @include section-title($secondary-color, right); 
+    padding: 0;
+  }
+
+  .carousel {
+    position: relative;
+    max-width: 900px;
+    margin: 2rem auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      box-sizing: border-box;
+
+      img,
+      video {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+      }
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      background: rgba(0, 0, 0, 0.5);
+      color: $white;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border: solid 5px;
+      transition: background 0.2s;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.8);
+      }
+
+      &.prev {
+        left: 10px;
+      }
+
+      &.next {
+        right: 10px;
+      }
+    }
+  }
+}
+
+.section-3 {
+  position: relative;
+  min-height: 100vh;
+  background: url("../assets/partner-bg.jpg") no-repeat center center/cover;
+  background-attachment: fixed; 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.section-3 .overlay {
+  background: rgba(248, 245, 245, 0.4); 
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.section-3 h2 {
+  font-size: 9rem;
+  font-family: "Didot", sans-serif;
+  margin-right: 5rem;
+}
+
+.brand-logos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  gap: 3rem; 
+  flex-wrap: wrap; 
+  background-color: transparent;
+}
+
+.brand-logos img {
+  height: 80px; 
+  border-radius: 10%;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.brand-logos img:hover {
+  animation: pulse 0.8s ease-in-out infinite;
+}
+
+.footer {
+  background: $primary-color;
+  color: $white;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  font-family: $font-body;
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.8rem;
+
+    a {
+      color: $white;
+      transition: color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        color: $highlight-color; //
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}
+
+
+// media query for responsive
+@media screen and (min-width: 1600px) {
+  h1 {
+    font-size: 5rem;
+  }
+  .nav-menu a {
+    font-size: 1.3rem;
+  }
+  .race-col {
+    font-size: 2rem;
+  }
+  .carousel{
+    width: 90%;
+    max-width: 1400px; 
+  }
+
+  .carousel-btn {
+    font-size: 2.5rem;
+}
+}
+
+
+@media screen and (max-width: 1366px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+  .nav-menu a {
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+  }
+  .race-col {
+    font-size: 1.6rem;
+  }
+
+  .section-3{
+   flex-direction: row;
+  }
+
+  .section-3 h2 {
+    font-size: 9rem;
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .time-grid {
+    grid-template-columns: repeat(4, 1fr); 
+    row-gap: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .nav-menu {
+    gap: 0.5rem;
+  }
+  .brand {
+    font-size: 18px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .section-3 {
+    flex-direction: column;
+  }
+
+  .section-3 h2 {
+    font-size: 9rem;
+    margin-bottom: 2rem;
+    margin-right: 0;
+  }
+
+  .brand-logos {
+    flex-direction: column;   
+    flex-wrap: wrap;       
+    gap: 1.5rem;
+    height: auto;        
+  }
+
+  .brand-logos img {
+    max-width: 80px;       
+    height: auto;
+  }
+
+  footer .social-icons i {
+    font-size: 20px;
+  }
+}
+
+
+
